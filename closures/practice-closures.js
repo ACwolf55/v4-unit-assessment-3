@@ -9,12 +9,18 @@
   */
   
   //CODE HERE
+function myFunc () {
+  let myStr = 'super secret string'
+  return function getSecretString(){
+    return myStr
+  }
 
+}
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
-  
+  const secretString = myFunc()
   
   ////////////PROBLEM 2////////////
 
@@ -29,22 +35,33 @@
   */
   
   //CODE HERE
+function lightSwitch(){
+  let isLightOn = false
+  function flipTheSwitch(){
+    if(isLightOn ===false){isLightOn=true}
+      else {isLightOn=false}
+    
 
+  }
+  return isLightOn
+
+}
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
-
+  let kitchenSwitch = lightSwitch()
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  
-  
+
+// return kitchenSwitch
+
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+ let bathroomSwitch = lightSwitch()
   
   //Invoke bathroomSwitch twice.
   

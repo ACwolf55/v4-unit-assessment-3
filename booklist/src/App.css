@@ -1,0 +1,49 @@
+body{
+  background-color: rgb(245, 245, 245);
+  display: flex;
+}
+
+#App{
+
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:15vh;
+  color:rgb(0, 128, 96);
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+#search-bar{
+display: flex;
+flex-direction: row;
+justify-content: center;
+height: 10;
+align-items: center;
+
+}
+
+main{
+  height: 75vh;
+  width: 100;
+  display: flex;
+  flex-direction: row;
+}
+
+#Booklist{
+  width: 80vw;
+
+
+}
+
+#Shelf{
+  width: 20vw;
+
+
+}
