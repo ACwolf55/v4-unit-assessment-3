@@ -1,28 +1,21 @@
 
-import React, { Component } from 'react';
-import '../App.css';
+import React from 'react'
+import Book from './Book'
 
-class Booklist extends Component {
-  constructor(){
-    super()
+const BookList = (props) => {
 
-    this.state ={
-
-    }
-// const mappedBooks = this.props.map(function(this.props,index)  this.props[index].img this.props[index].title this.props[index].author )
-
-  }
-
-  render() {
-    //  const mappedBooks = this.state.props.map((element)=> {
-    //      return <Booklist book={element} key={element.id}/>
-    //  })
-    // console.log(props.Booklist)
+  const mappedBooks = props.books.map((element,index)=> {
     return (
-        <div className="Booklist">
-            <div id='book'>Books: </div>
-        </div>
-      );
-    }
+    <Book key={element.id} book={element} title={element.title} author={element.author} img={element.img}
+     shelfPush={props.addToShelf} index={index}
+    />
+    )
+  })
+
+  return <div className="booklist">{mappedBooks}</div>
 }
-export default Booklist
+
+
+
+
+export default BookList

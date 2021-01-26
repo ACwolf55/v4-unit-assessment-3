@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header'
-import Booklist from './components/Booklist'
+import BookList from './components/BookList'
 import Shelf from './components/Shelf'
-import Data from './data'
+import data from './data'
 import SearchBar from './components/SearchBar';
 
 
@@ -16,20 +14,32 @@ class App extends Component {
     super()
 
     this.state ={
-      books: Data,
+      books: data,
       shelf:[]
-
     }
-
-function addToShelf(){}
-
-function clearShelf(){}
-
-function filterBooks(){}
-
-function reset(){}
-
+    this.addToShelf = this.addToShelf.bind(this)
+    this.clearShelf = this.clearShelf.bind(this)
   }
+
+addToShelf(bookIndex) {
+  console.log(bookIndex)
+  const shelfCopy = [...this.state.shelf]
+  shelfCopy.push(this.state.books[bookIndex].title)
+  this.setState({
+    shelf:shelfCopy
+  })
+}
+
+ clearShelf(){
+   this.setState({
+     shelf:[]
+   })
+ }
+
+ filterBooks(){}
+
+ reset(){}
+
 
   render() {
 
@@ -37,10 +47,13 @@ function reset(){}
   return (
     <div className="App">
       <Header/>
+      <section></section>
+      <footer></footer>
       <SearchBar/>
       <main>
-         <Booklist books={this.state.books}/>
-         <Shelf/>
+         <BookList books={this.state.books} addToShelf={this.addToShelf}/>
+         <div id='dividerthing'></div>
+         <Shelf shelf={this.state.shelf}/>
       </main>
    </div>
   );

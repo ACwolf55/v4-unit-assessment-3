@@ -3,7 +3,7 @@ body{
   display: flex;
 }
 
-#App{
+.App{
 
   display: flex;
   flex-direction: column;
@@ -13,37 +13,80 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  height:15vh;
+  height:13vh;
   color:rgb(0, 128, 96);
   font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
 }
 
-#search-bar{
+section{
+height: 1vh;
+background-color: rgb(226, 224, 224);
+
+}
+
+footer{
+height: 1vh;
+background-color: rgb(241, 239, 239);
+
+}
+
+.search-bar{
 display: flex;
 flex-direction: row;
 justify-content: center;
 height: 10;
 align-items: center;
+margin:5px;
+padding: 15px;
 
 }
 
-main{
+main {
   height: 75vh;
-  width: 100;
+  width: 100vw;
   display: flex;
   flex-direction: row;
 }
 
-#Booklist{
-  width: 80vw;
+.booklist{
+  width: 74vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3px;
+  justify-content: space-evenly;
 
 
 }
 
-#Shelf{
+.book {
+ width:11vw;
+ height: 25;
+ word-wrap: break-word;
+ border: 5px solid rgb(245, 245, 245);
+}
+
+img{
+width:11vw;
+height: 25vh;
+display: flex;
+flex-wrap: wrap;
+
+
+}
+
+#dividerthing{
+  height: 75vh;
+  width: 2px;
+  background-color: black;
+
+
+
+}
+.Shelf{
   width: 20vw;
+  text-align: center;
 
 
 }
