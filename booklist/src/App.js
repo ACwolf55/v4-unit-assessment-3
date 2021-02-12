@@ -19,6 +19,8 @@ class App extends Component {
     }
     this.addToShelf = this.addToShelf.bind(this)
     this.clearShelf = this.clearShelf.bind(this)
+    this.filterBooks = this.filterBooks.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
 addToShelf(bookIndex) {
@@ -32,13 +34,26 @@ addToShelf(bookIndex) {
 
  clearShelf(){
    this.setState({
-     shelf:[]
+     books:data
    })
  }
 
- filterBooks(){}
+filterBooks(input){
+    const {books} = this.state  
+    let filteredBooks = books.filter(
+      (obj) =>{return obj.title.includes(input) ||  obj.author.includes(input) }
+      )
+      console.log(filteredBooks)
+    this.setState({
+      books:filteredBooks
+    })
+}
 
- reset(){}
+ reset(){
+  this.setState({
+    books:data
+  });
+ }
 
 
   render() {
@@ -49,11 +64,11 @@ addToShelf(bookIndex) {
       <Header/>
       <section></section>
       <footer></footer>
-      <SearchBar/>
+      <SearchBar filterBooks={this.filterBooks} reset={this.reset}/>
       <main>
          <BookList books={this.state.books} addToShelf={this.addToShelf}/>
          <div id='dividerthing'></div>
-         <Shelf shelf={this.state.shelf}/>
+         <Shelf shelf={this.state.shelf} clearShelf={this.clearShelf}/>
       </main>
    </div>
   );

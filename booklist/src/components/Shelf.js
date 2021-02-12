@@ -20,7 +20,7 @@ class Shelf extends Component {
     return (
       <div className="Shelf">
         <h3>Your Shelf</h3>
-        <button>Clear Shelf</button>
+        <button onClick={this.props.clearShelf}>Clear Shelf</button>
         <div id='shelflist'>
           {shelfMap}
         </div>
